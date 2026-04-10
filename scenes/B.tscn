@@ -1,0 +1,143 @@
+[gd_scene load_steps=10 format=3 uid="uid://gmi76ai472cf"]
+
+[ext_resource type="Texture2D" uid="uid://babiu2555i0n8" path="res://assets/IMG_20260302_205203.jpg" id="1_5at1n"]
+[ext_resource type="Script" uid="uid://dk2un0kuxv2js" path="res://scenes/b.gd" id="1_ntr6a"]
+[ext_resource type="Texture2D" uid="uid://bd5j8urue5v7r" path="res://assets/IMG_20260303_180558.png" id="2_ntr6a"]
+[ext_resource type="Texture2D" uid="uid://c74885agmsi6w" path="res://assets/IMG_20260315_025144.png" id="4_6hif6"]
+[ext_resource type="Texture2D" uid="uid://dgmfu7yb2kqbh" path="res://assets/IMG_20260315_032412.png" id="5_5at1n"]
+[ext_resource type="Texture2D" uid="uid://i7mrvwl20rsb" path="res://assets/IMG_20260315_024930 (1).png" id="6_d21p5"]
+[ext_resource type="Texture2D" uid="uid://ctewjgou80qxs" path="res://assets/mmexport97d9a0c465ba863703242b6a781dedad_17737547.jpg" id="7_5at1n"]
+[ext_resource type="Texture2D" uid="uid://dpy85yvkvi2rl" path="res://assets/IMG_20260318_031833.png" id="7_d21p5"]
+[ext_resource type="Texture2D" uid="uid://be0s1w5rgd886" path="res://assets/IMG_20260317_215957.jpg" id="8_d21p5"]
+
+[node name="B" type="Node2D"]
+script = ExtResource("1_ntr6a")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+offset_left = -350.0
+offset_top = -250.0
+offset_right = 2250.0
+offset_bottom = 1350.0
+texture = ExtResource("1_5at1n")
+
+[node name="Room" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 110.0
+offset_top = -20.0
+offset_right = 1810.0
+offset_bottom = 990.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ntr6a")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 645.0
+offset_top = 243.0
+offset_right = 1239.0
+offset_bottom = 724.0
+texture = ExtResource("4_6hif6")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+offset_left = 897.0
+offset_top = 372.0
+offset_right = 1102.0
+offset_bottom = 577.0
+texture = ExtResource("5_5at1n")
+expand_mode = 1
+
+[node name="Handle" type="TextureRect" parent="."]
+offset_left = 747.0
+offset_top = 314.0
+offset_right = 892.0
+offset_bottom = 641.0
+texture = ExtResource("6_d21p5")
+expand_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_left = 931.0
+offset_top = 406.0
+offset_right = 1076.0
+offset_bottom = 551.0
+columns = 3
+
+[node name="Button" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(42, 42)
+layout_mode = 2
+action_mode = 0
+icon = ExtResource("7_d21p5")
+flat = true
+expand_icon = true
+
+[node name="Button2" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(42, 42)
+layout_mode = 2
+icon = ExtResource("7_d21p5")
+flat = true
+expand_icon = true
+
+[node name="Button3" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(42, 0)
+layout_mode = 2
+icon = ExtResource("7_d21p5")
+flat = true
+expand_icon = true
+
+[node name="Button4" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+icon = ExtResource("7_d21p5")
+flat = true
+expand_icon = true
+
+[node name="Button5" type="Button" parent="GridContainer"]
+layout_mode = 2
+icon = ExtResource("7_d21p5")
+flat = true
+expand_icon = true
+
+[node name="Button6" type="Button" parent="GridContainer"]
+layout_mode = 2
+icon = ExtResource("7_d21p5")
+flat = true
+expand_icon = true
+
+[node name="Button7" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+icon = ExtResource("7_d21p5")
+flat = true
+expand_icon = true
+
+[node name="Button8" type="Button" parent="GridContainer"]
+layout_mode = 2
+icon = ExtResource("7_d21p5")
+flat = true
+expand_icon = true
+
+[node name="Button9" type="Button" parent="GridContainer"]
+layout_mode = 2
+icon = ExtResource("7_d21p5")
+flat = true
+expand_icon = true
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+visible = false
+offset_left = 596.5
+offset_top = 198.0
+offset_right = 1296.5
+offset_bottom = 756.0
+texture = ExtResource("7_5at1n")
+expand_mode = 1
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+offset_left = 599.499
+offset_top = 239.013
+offset_right = 1289.499
+offset_bottom = 720.013
+texture = ExtResource("8_d21p5")
+expand_mode = 1

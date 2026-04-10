@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtxuvpy1btu3d"]
+
+[ext_resource type="Texture2D" uid="uid://bcebkspj4ymcj" path="res://assets/IMG_20260228_214240.png" id="1_wu84c"]
+[ext_resource type="Texture2D" uid="uid://bgsg4hdnwx740" path="res://assets/IMG_20260228_214127(1).png" id="2_8ln24"]
+[ext_resource type="Texture2D" uid="uid://dxvk1rgefm0l2" path="res://assets/IMG_20260301_193106.png" id="5_8ln24"]
+[ext_resource type="Script" uid="uid://gcq085ymqrxd" path="res://scripts/texture_button_2.gd" id="6_rtw2f"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.0010187197
+
+[node name="TextureRect1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 374.0
+offset_right = 718.0
+offset_bottom = 724.0
+texture = ExtResource("1_wu84c")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1063.0
+offset_top = 208.0
+offset_right = 1713.0
+offset_bottom = 696.0
+rotation = 0.34906584
+texture = ExtResource("2_8ln24")
+
+[node name="TextureButton1" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.0
+offset_top = -89.00003
+offset_right = -26.0
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.35, 1.35)
+texture_normal = ExtResource("5_8ln24")
+script = ExtResource("6_rtw2f")
+click_sound_path = "res://sounds/mixkit-sci-fi-interface-robot-click-901 (online-audio-converter.com).ogg"
+target_scene_path = "res://scenes/Frame.tscn"

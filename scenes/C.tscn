@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://8y88qxnkf0a7"]
+
+[ext_resource type="Texture2D" uid="uid://babiu2555i0n8" path="res://assets/IMG_20260302_205203.jpg" id="1_b7qhu"]
+[ext_resource type="Texture2D" uid="uid://bd5j8urue5v7r" path="res://assets/IMG_20260303_180558.png" id="2_1ls3u"]
+[ext_resource type="Texture2D" uid="uid://d1ae05b1y45r4" path="res://assets/1773482954416.png" id="3_2cla7"]
+[ext_resource type="Texture2D" uid="uid://bqwwx2jodro2e" path="res://assets/IMG_20260314_183038.png" id="4_q8qmg"]
+
+[node name="C" type="Node2D"]
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+offset_left = -350.0
+offset_top = -250.0
+offset_right = 2250.0
+offset_bottom = 1350.0
+texture = ExtResource("1_b7qhu")
+
+[node name="Room" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 110.0
+offset_top = -20.0
+offset_right = 1810.0
+offset_bottom = 990.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1ls3u")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 340.0
+offset_top = 100.0
+offset_right = 940.0
+offset_bottom = 950.0
+texture = ExtResource("3_2cla7")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 990.0
+offset_top = 100.0
+offset_right = 1590.0
+offset_bottom = 950.0
+texture = ExtResource("4_q8qmg")
+expand_mode = 1

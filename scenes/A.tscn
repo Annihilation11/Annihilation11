@@ -1,0 +1,124 @@
+[gd_scene load_steps=13 format=3 uid="uid://pfkda7catsrd"]
+
+[ext_resource type="Texture2D" uid="uid://babiu2555i0n8" path="res://assets/IMG_20260302_205203.jpg" id="1_3h1o4"]
+[ext_resource type="Texture2D" uid="uid://bd5j8urue5v7r" path="res://assets/IMG_20260303_180558.png" id="2_h4k76"]
+[ext_resource type="Texture2D" uid="uid://cq81sxadcukd1" path="res://assets/桌子.png" id="3_7ge3w"]
+[ext_resource type="Texture2D" uid="uid://2r2vnfx7g8rp" path="res://assets/电脑.png" id="4_3h1o4"]
+[ext_resource type="Texture2D" uid="uid://m5pr0lu6m38a" path="res://assets/椅子.png" id="5_h702i"]
+[ext_resource type="Script" uid="uid://cryhbbldv11ys" path="res://scenes/computer.gd" id="6_3dpb0"]
+[ext_resource type="Texture2D" uid="uid://c50sugsem3kmp" path="res://assets/台灯.png" id="6_548l3"]
+[ext_resource type="Texture2D" uid="uid://grcluktp083g" path="res://assets/IMG_20260314_172826.png" id="6_h4k76"]
+[ext_resource type="Texture2D" uid="uid://benmdoqlph0p8" path="res://assets/1773479980823-4.png" id="7_h4k76"]
+[ext_resource type="Texture2D" uid="uid://ci5jjl08j0vrq" path="res://assets/IMG_20260224_170308(1).png" id="10_7ge3w"]
+
+[sub_resource type="Shader" id="Shader_7xvqn"]
+code = "shader_type canvas_item;
+
+// 这里的颜色是你图片的米黄色背景，可在检查器中调整
+uniform vec4 transparent_color : source_color = vec4(1.0, 0.96, 0.86, 1.0);
+
+void fragment() {
+    vec4 color = texture(TEXTURE, UV);
+    // 判断当前像素颜色是否接近我们要抠掉的颜色
+    if (distance(color.rgb, transparent_color.rgb) < 0.1) {
+        color.a = 0.0; // 设置为透明
+    }
+    COLOR = color;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3u8nt"]
+shader = SubResource("Shader_7xvqn")
+shader_parameter/transparent_color = Color(1, 0.96, 0.86, 1)
+
+[node name="A" type="Node2D"]
+position = Vector2(-1, 0)
+metadata/_edit_vertical_guides_ = [-890.0]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(2600, 1600)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 911.0
+offset_top = 461.0
+offset_right = 3511.0
+offset_bottom = 2061.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3h1o4")
+
+[node name="Room" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 110.0
+offset_top = -20.0
+offset_right = 1810.0
+offset_bottom = 990.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_h4k76")
+expand_mode = 1
+
+[node name="Desk" type="TextureRect" parent="."]
+offset_left = 464.0
+offset_top = 513.0
+offset_right = 1424.0
+offset_bottom = 921.0
+texture = ExtResource("3_7ge3w")
+expand_mode = 1
+
+[node name="Computer" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_3u8nt")
+use_parent_material = true
+offset_left = 770.0
+offset_top = 255.0
+offset_right = 1123.0
+offset_bottom = 579.0
+texture = ExtResource("4_3h1o4")
+expand_mode = 1
+script = ExtResource("6_3dpb0")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 791.0
+offset_top = 552.0
+offset_right = 1041.0
+offset_bottom = 598.0
+texture = ExtResource("6_h4k76")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 1080.0
+offset_top = 545.0
+offset_right = 1120.0
+offset_bottom = 595.0
+rotation = -0.10912845
+texture = ExtResource("7_h4k76")
+expand_mode = 1
+
+[node name="Chair" type="TextureRect" parent="."]
+offset_left = 795.0
+offset_top = 424.0
+offset_right = 1099.0
+offset_bottom = 953.0
+texture = ExtResource("5_h702i")
+expand_mode = 1
+
+[node name="Desklamp" type="TextureRect" parent="."]
+offset_left = 1016.3596
+offset_top = 299.10672
+offset_right = 1360.452
+offset_bottom = 558.4181
+rotation = 0.122608915
+texture = ExtResource("6_548l3")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+offset_left = 551.0
+offset_top = 304.0
+offset_right = 822.0
+offset_bottom = 591.0
+texture = ExtResource("10_7ge3w")
+expand_mode = 1

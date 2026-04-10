@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cvb7knkvx3at2"
+path="res://.godot/imported/mixkit-quick-metal-transition-sweep-2639 (online-audio-converter.com).ogg-2de73f8e1c75b7476c09fcb83fc01656.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/mixkit-quick-metal-transition-sweep-2639 (online-audio-converter.com).ogg"
+dest_files=["res://.godot/imported/mixkit-quick-metal-transition-sweep-2639 (online-audio-converter.com).ogg-2de73f8e1c75b7476c09fcb83fc01656.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
