@@ -17,10 +17,9 @@ var tr6_click_audio: AudioStreamPlayer
 @onready var texture_rect_5 = $TextureRect5 # 【需要你确认的节点路径】
 @onready var texture_rect_6 = $TextureRect6 # 【需要你确认的节点路径】
 
-# --- 记录后续点击状态的变量 ---
-var handle_rotated: bool = false
-var tr6_revealed: bool = false
-var tr7_revealed: bool = false
+const HANDLE_ROTATED_ANGLE: float = 180.0
+
+
 
 func _ready():
     randomize()
@@ -104,6 +103,14 @@ func _ready():
     
     generate_puzzle()
     update_ui()
+    
+    # --- 还原通关后的持久化状态 ---
+    if GlobalState.handle_rotated:
+        handle_rect.rotation_degrees = HANDLE_ROTATED_ANGLE
+    if GlobalState.tr6_revealed:
+        texture_rect_6.visible = true
+    if GlobalState.tr7_revealed:
+        texture_rect_5.visible = true
 
 func _set_button_pivot(btn: Button):
     btn.pivot_offset = btn.size / 2.0
@@ -175,18 +182,18 @@ func _on_handle_gui_input(event: InputEvent):
     if not is_game_over: return
     
     if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-        if not handle_rotated:
+        if not GlobalState.handle_rotated:
             # 第一次点击：顺时针旋转180度并播放音效
-            handle_rotated = true
+            GlobalState.handle_rotated = true
             handle_rotate_audio.play()
             
             # 使用Tween做平滑旋转 (如果想瞬间旋转，可以直接写 handle_rect.rotation_degrees = 180)
             var tween = create_tween()
-            tween.tween_property(handle_rect, "rotation_degrees", 180.0, 0.3)
+            tween.tween_property(handle_rect, "rotation_degrees", HANDLE_ROTATED_ANGLE, 0.3)
             
-        elif not tr6_revealed:
+        elif not GlobalState.tr6_revealed:
             # 旋转过之后再次点击：让TextureRect6可见并播放音效
-            tr6_revealed = true
+            GlobalState.tr6_revealed = true
             handle_click2_audio.play()
             texture_rect_6.visible = true
             
@@ -199,11 +206,11 @@ func _on_handle_gui_input(event: InputEvent):
 # --- 处理 TextureRect6 的点击事件 ---
 func _on_tr6_gui_input(event: InputEvent):
     # 必须等 TR6 已经显示出来才能点击
-    if not tr6_revealed: return
+    if not GlobalState.tr6_revealed: return
     
     if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-        if not tr7_revealed:
-            tr7_revealed = true
+        if not GlobalState.tr7_revealed:
+            GlobalState.tr7_revealed = true
             tr6_click_audio.play()
             texture_rect_6.visible = true
             
